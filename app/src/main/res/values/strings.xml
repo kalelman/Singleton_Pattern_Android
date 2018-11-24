@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Singleton_Pattern_Android</string>
+    <string name="txt_settings">Settings</string>
+    <string name="txt_search">Search</string>
+    <string name="toolbar_title">Singleton Pattern</string>
 </resources>
