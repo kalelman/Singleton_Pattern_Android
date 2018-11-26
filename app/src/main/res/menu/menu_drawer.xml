@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/comedy"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="@string/txt_comedy"
+        />
+
+    <item
+        android:id="@+id/drama"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="@string/txt_drama"
+        />
+
+    <item
+        android:id="@+id/mistery"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="@string/txt_mistery"
+        />
+
+</menu>
