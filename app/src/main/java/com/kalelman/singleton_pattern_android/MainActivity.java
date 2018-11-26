@@ -2,6 +2,7 @@ package com.kalelman.singleton_pattern_android;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -61,14 +62,32 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (menuItem.getItemId()) {
                     case R.id.comedy:
+                        ContentFragment fragment = new ContentFragment();
+                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.fragment, fragment);
+                        transaction.addToBackStack(null); // just for remember the capacity to come back to the previus fragment
+                        transaction.commit();
+
                         Toast.makeText(MainActivity.this, "Comedy", Toast.LENGTH_SHORT).show();
                         return true;
 
                     case R.id.drama:
+                        ContentFragmentDrama fragmentDrama = new ContentFragmentDrama();
+                        FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+                        t.replace(R.id.fragment, fragmentDrama);
+                        t.addToBackStack(null);
+                        t.commit();
+
                         Toast.makeText(MainActivity.this, "Drama", Toast.LENGTH_SHORT).show();
                         return true;
 
                     case R.id.mistery:
+                        ContentFragmentMistery fragmentMistery = new ContentFragmentMistery();
+                        FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
+                        trans.replace(R.id.fragment, fragmentMistery);
+                        trans.addToBackStack(null);
+                        trans.commit();
+
                         Toast.makeText(MainActivity.this, "Mistery", Toast.LENGTH_SHORT).show();
                         return true;
 
@@ -77,6 +96,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
     }
 
     @Override
